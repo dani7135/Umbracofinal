@@ -20,7 +20,7 @@ namespace ClassLibrary.Migrations
                 .HasAnnotation("ProductVersion", "3.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
+             
             modelBuilder.Entity("ClassLibrary.Submisssion", b =>
                 {
                     b.Property<int>("Id")
