@@ -33,7 +33,7 @@ namespace Umbracofinal
              return _umbracoContext.Submissions.ToList();
          }
               */
-             services.AddScoped<DataAccess>();
+            services.AddScoped<DataAccess>();
 
             services.AddDbContext<UmbracoContext>(options =>
            options.UseSqlServer(Configuration.GetConnectionString("UmbracoContext")));

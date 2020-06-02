@@ -5,10 +5,11 @@ using System.Linq;
 
 namespace ClassLibrary
 {
-    public class DataAccess 
+    public class DataAccess : Interface1 
+        
     {
         readonly string textFile = @"SerialNumber.txt";
-        private readonly UmbracoContext _umbracoContext;
+        public UmbracoContext _umbracoContext;
 
         public DataAccess(UmbracoContext umbracoContext){
             _umbracoContext = umbracoContext;
