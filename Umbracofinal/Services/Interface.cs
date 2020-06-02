@@ -7,13 +7,12 @@ using ClassLibrary;
 
 namespace Umbracofinal.Services
 {
-    interface Interface
+    /*interface Interface
     {
-    }
+    }*/
     public interface ISerialNumber
     {
         bool ValidedSerialsNumber(int number);
-        List<int> GetSerialsNumbers();
     }
     public interface IAge
     {

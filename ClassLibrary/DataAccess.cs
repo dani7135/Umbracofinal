@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace ClassLibrary
 {
@@ -8,11 +9,11 @@ namespace ClassLibrary
     {
         readonly string textFile = @"SerialNumber.txt";
         private readonly UmbracoContext _umbracoContext;
-        public DataAccess(UmbracoContext umbracoContext) {
+
+        public DataAccess(UmbracoContext umbracoContext){
             _umbracoContext = umbracoContext;
         }
-
-
+   
         public List<int> GetSerialsNumbers()
         {
             List<int> validSerialsNumbers = new List<int>();
@@ -29,21 +30,10 @@ namespace ClassLibrary
                 }
             }
             return validSerialsNumbers;
-
-        }
-
-        public bool ValidedSerialsNumber(int number)
+        }       
+        public List<Submisssion> GetSubmisssions()
         {
-            List<int> listOfNumber = GetSerialsNumbers();
-            foreach (var item in listOfNumber)
-            {
-                if (number == item)
-                {
-                    return true;
-                }
-
-            }
-            return false;
+            return _umbracoContext.Submissions.ToList();
         }
     }
 }

@@ -26,7 +26,14 @@ namespace Umbracofinal
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            /* var test = DataAccess();
+             test.GetSerialsNumbers();
+             public List<Submisssion> GetSubmisssions()
+         {
+             return _umbracoContext.Submissions.ToList();
+         }
+              */
+             services.AddScoped<DataAccess>();
 
             services.AddDbContext<UmbracoContext>(options =>
            options.UseSqlServer(Configuration.GetConnectionString("UmbracoContext")));
