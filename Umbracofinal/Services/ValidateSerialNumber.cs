@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ClassLibrary;
+ 
 
 namespace Umbracofinal.Services
 {
-    public class ValidateSerialNumber : ISerialNumber
+    /*public class ValidateSerialNumber : ISerialNumber
     {
+
 
          /* DataAccess access = new DataAccess();
 
@@ -23,15 +25,16 @@ namespace Umbracofinal.Services
 
               }
               return false;
-          }*/
-        private readonly DataAccess _dataAccess;
-        public ValidateSerialNumber(DataAccess dataAccess)
+          }
+        private readonly UmbracoContext _dataAccess;
+        private readonly DataAccess da;
+        public ValidateSerialNumber(UmbracoContext dataAccess)
         {
             _dataAccess = dataAccess;
         }
-        public bool ValidedSerialsNumber(int number)
+       /* public bool ValidedSerialsNumber(int number)
         {
-            List<int> listOfNumber = _dataAccess.GetSerialsNumbers();
+           /* List<int> listOfNumber = _dataAccess.GetSerialsNumbers();
             foreach (var item in listOfNumber)
             {
                 if (number == item)
@@ -42,5 +45,5 @@ namespace Umbracofinal.Services
             }
             return false;
         }
-    }
+    }*/
 }
