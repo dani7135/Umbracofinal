@@ -17,7 +17,7 @@ namespace UnitTestProject
             var db = new UmbracoContext(options);
             db.Database.EnsureCreated();
             return db;
-        }
+        } 
         [TestMethod]
         public void GetSerialsNumbers()
         {
