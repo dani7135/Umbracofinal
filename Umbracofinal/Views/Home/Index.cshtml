@@ -2,9 +2,11 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <p>Hej</p>
-</div>
-@section script{ 
-<script src ="@Url.Content"></script>
+<div id="app">
+        <home-component>
+            <p>Hej</p>
+        </home-component>
+    </div>
+@section scripts{ 
+<script src ="@Url.Content("~/bundle/home.js")"></script>
 }
