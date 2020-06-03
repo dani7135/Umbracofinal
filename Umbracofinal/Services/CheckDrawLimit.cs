@@ -15,12 +15,11 @@ namespace Umbracofinal.Services
         {
             umbraco = context;
         }
-      /*  DataAccess dataAccess = new DataAccess();
 
         public bool DrawWinner()
-        {
+        {/*
             var number = new DataAccess();
-            List<int> listOfNumber = GetSubmisssions();
+            List<int> listOfNumber umbraco.GetSubmisssions();
             for (int i = 0; i < 2; i++)
             {
                 return true;
