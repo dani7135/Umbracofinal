@@ -6,16 +6,22 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ClassLibrary;
+using Umbracofinal.Services;
 
 namespace Umbracofinal.Controllers
 {
     public class SubmisssionsController : Controller
     {
         private readonly UmbracoContext _context;
+        private readonly ValidateSerialNumber serialNumber;
 
         public SubmisssionsController(UmbracoContext context)
         {
             _context = context;
+        }
+        public async Task<IActionResult> Createpage()
+        {
+            return View();
         }
 
         // GET: Submisssions
@@ -55,12 +61,19 @@ namespace Umbracofinal.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Age,FirstName,LastName,Email,SerialNumber")] Submisssion submisssion)
         {
-            if (ModelState.IsValid)
+          /*  if (!serialNumber.ValidedSerialsNumber(submisssion.SerialNumber))
             {
+                return NotFound("Serial number does not exist!");
+
+            }*/
+            if (ModelState.IsValid)
+                {
+                
                 _context.Add(submisssion);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+            
             return View(submisssion);
         }
 
